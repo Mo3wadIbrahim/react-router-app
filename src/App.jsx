@@ -1,25 +1,28 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
+import RootLayout from "./ui/RootLayout.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <About />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 function App() {
   return (
-    <div>
-      <p>
-        <a href="http://localhost:5173/">Home</a>
-      </p>
-      <a href="http://localhost:5173/about">About</a>
+    <>
       <RouterProvider router={router} />
-    </div>
+    </>
   );
 }
 
