@@ -3,6 +3,8 @@ import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 import RootLayout from "./ui/RootLayout.jsx";
 import ErrorComponent from "./components/ErrorComponent.jsx";
+import Products from "./components/Products.jsx";
+import ProductDetails from "./components/ProductDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
       },
       {
         path: "*",
