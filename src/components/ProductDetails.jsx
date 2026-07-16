@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { DUMMY_PRODUCTS } from "../redux-store/helpers";
 import ErrorComponent from "./ErrorComponent";
 export default function ProductDetails() {
@@ -6,5 +6,20 @@ export default function ProductDetails() {
   const productIndex = DUMMY_PRODUCTS.findIndex(
     (product) => product.id === params.id,
   );
-  return <>{productIndex >= 0 ? <h1> {params.id} </h1> : <ErrorComponent />}</>;
+  return (
+    <>
+      {productIndex >= 0 ? (
+        <div>
+          <h1> {params.id} </h1>
+          <h2>
+            <Link to=".." relative="path">
+              Back
+            </Link>
+          </h2>
+        </div>
+      ) : (
+        <ErrorComponent />
+      )}
+    </>
+  );
 }
