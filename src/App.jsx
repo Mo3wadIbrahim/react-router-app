@@ -29,11 +29,13 @@ import NewEventPage from "./components/pages/NewEventPage";
 import EditEventPage from "./components/pages/EditEventPage";
 import MainLayout from "./components/pages/MainLayout";
 import EventsLayout from "./components/pages/EventsLayout";
-
+// import ErrorPage from "./components/pages/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    HydrateFallback: () => <p>Loading initial data...</p>,
+    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
