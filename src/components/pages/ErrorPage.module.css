@@ -1,3 +1,6 @@
-.content {
+.error-content {
   text-align: center;
+}
+.error-content h1 {
+  color: red;
 }

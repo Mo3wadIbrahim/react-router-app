@@ -5,21 +5,21 @@ import classes from "./ErrorPage.module.css";
 export default function ErrorPage() {
   const error = useRouteError();
 
-  let title = "An Error Occurred!";
+  let title = "Error: An Error Occurred!";
   let message = "Something went wrong!";
   if (error.status === 500) {
-    title = "Internal Server Error";
+    title = "Error: Internal Server Error";
     message = JSON.parse(error.data).message;
   }
   if (error.status === 404) {
-    title = "Not Found";
+    title = "Error: Not Found";
     message = "Page not found";
   }
   return (
     <>
       <MainNavigation />
-      <div className={classes.content}>
-        <h1>{title}</h1>
+      <div className={classes["error-content"]}>
+        <h1>{title} !</h1>
         <p>{message}</p>
       </div>
     </>
