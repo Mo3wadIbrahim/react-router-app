@@ -36,17 +36,6 @@ function EventsNavigation() {
               New Event
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-              to={`${eventID}/edit`}
-            >
-              Edit Event
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </header>
