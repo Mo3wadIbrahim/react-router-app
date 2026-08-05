@@ -34,6 +34,8 @@ import MainLayout from "./components/pages/MainLayout";
 import EventsLayout from "./components/pages/EventsLayout";
 import ErrorPage from "./components/pages/ErrorPage";
 import { action as manipulateEventAction } from "./components/EventForm.jsx";
+import NewsLetterPage from "./components/pages/NewsLetterPage.jsx";
+import { action as newsLetterAction } from "./components/NewsLetter.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,9 +48,13 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: "newsletter",
+        element: <NewsLetterPage />,
+        action: newsLetterAction,
+      },
+      {
         path: "events",
         element: <EventsLayout />,
-
         children: [
           {
             index: true,
