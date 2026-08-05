@@ -1,17 +1,13 @@
 import classes from "./EventItem.module.css";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useSubmit } from "react-router-dom";
 
 function EventItem({ event }) {
-  const { id: eventId } = useParams();
-  const navigate = useNavigate();
-  async function startDeleteHandler() {
-    const response = await fetch("http://localhost:8080/events/" + eventId, {
-      method: "DELETE",
-    });
-    if (!response.ok) {
-      throw new Error("Something went wrong!");
+  const submit = useSubmit();
+  function startDeleteHandler() {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      submit(null, { method: "delete" });
     }
-    navigate("/events");
   }
 
   return (
