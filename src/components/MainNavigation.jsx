@@ -40,11 +40,9 @@ function MainNavigation() {
               Newsletter
             </NavLink>
           </li>
-          <li>
-            <NewsLetter />
-          </li>
         </ul>
       </nav>
+      <NewsLetter />
     </header>
   );
 }
