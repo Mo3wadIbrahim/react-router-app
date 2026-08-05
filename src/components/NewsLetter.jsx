@@ -10,7 +10,11 @@ export default function NewsLetter() {
     }
   }, [state, data]);
   return (
-    <fetcher.Form method="post" action="/newsletter" className={classes.newsletter}>
+    <fetcher.Form
+      method="post"
+      action="/newsletter"
+      className={classes.newsletter}
+    >
       <input type="email" placeholder="Enter your email" required />
       <button type="submit">Subscribe</button>
     </fetcher.Form>
